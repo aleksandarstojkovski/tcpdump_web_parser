@@ -1,0 +1,1 @@
+tcpdump -r test.pcap -n -tttt  | perl -lane 'print if $F[7]=~/\[1au\]/ and $F[8]=~/^A\?/' | perl -ne 'print "$1,$2,$3,$4,$5\n" if /(\S+)\s(\S+)\s\S+\s(\S+)\s\S+\s(\S+)\s\S+\s\S+\s\S+\s(\S+)/'
