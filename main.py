@@ -25,7 +25,7 @@ def read_http_file() -> list:
 
 def read_dns_file() -> list:
     table_entries = []
-    dns_entries = subprocess.Popen([os.getcwd() + "scripts/dns.sh", tcpdump_pcap_file], stdout=subprocess.PIPE,
+    dns_entries = subprocess.Popen([os.getcwd() + "/scripts/dns.sh", tcpdump_pcap_file], stdout=subprocess.PIPE,
                                    universal_newlines=True)
     stdout, stderr = dns_entries.communicate()
     for line in stdout.splitlines():
@@ -40,7 +40,7 @@ def read_dns_file() -> list:
 
 def read_https_file() -> list:
     table_entries = []
-    dns_entries = subprocess.Popen([os.getcwd() + "scripts/https.sh", tcpdump_pcap_file], stdout=subprocess.PIPE,
+    dns_entries = subprocess.Popen([os.getcwd() + "/scripts/https.sh", tcpdump_pcap_file], stdout=subprocess.PIPE,
                                    universal_newlines=True)
     stdout, stderr = dns_entries.communicate()
     for line in stdout.splitlines():
@@ -54,7 +54,7 @@ def read_https_file() -> list:
 
 def read_dns_uniq_file() -> list:
     table_entries = []
-    dns_entries = subprocess.Popen([os.getcwd() + "scripts/dns.sh", tcpdump_pcap_file], stdout=subprocess.PIPE,
+    dns_entries = subprocess.Popen([os.getcwd() + "/scripts/dns.sh", tcpdump_pcap_file], stdout=subprocess.PIPE,
                                    universal_newlines=True)
     stdout, stderr = dns_entries.communicate()
     for line in stdout.splitlines():
