@@ -40,9 +40,9 @@ def read_dns_file() -> list:
 
 def read_https_file() -> list:
     table_entries = []
-    dns_entries = subprocess.Popen([os.getcwd() + "/scripts/https.sh", tcpdump_pcap_file], stdout=subprocess.PIPE,
+    https_entries = subprocess.Popen([os.getcwd() + "/scripts/https.sh", tcpdump_pcap_file], stdout=subprocess.PIPE,
                                    universal_newlines=True)
-    stdout, stderr = dns_entries.communicate()
+    stdout, stderr = https_entries.communicate()
     for line in stdout.splitlines():
         match = dnsRegex.search(line)
         if match is not None:
